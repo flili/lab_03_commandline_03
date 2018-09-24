@@ -17,6 +17,8 @@ We're going to be writing a shell script.  First, though... let's figure out wha
 
 What command did you use, and what was its output?
 ----------
+ent-v314-005:~ student$ date
+Mon Sep 24 15:50:40 EDT 2018
 
 
 
@@ -26,6 +28,8 @@ What command did you use, and what was its output?
 What command did you use, and what was its output?
 ----------
 
+date 2018
+
 
 
 ==========
@@ -33,7 +37,8 @@ What command did you use, and what was its output?
 
 What commands did you use to do this?
 ----------
-
+ent-v314-005:~ student$ pwd
+/Users/student
 
 
 ==========
@@ -41,7 +46,20 @@ What commands did you use to do this?
 
 What commands did you use to do this?
 ----------
-
+ent-v314-005:~ student$ touch copy_to_backup.sh
+ent-v314-005:~ student$ ls
+Adlm			Music			ipe.properties
+Adobe			New Unity Project	isus
+Applications		Pictures		ls
+BALANS.png.gz		Public			mtec1003-lab-03
+BALANS.tar		QLData			mtec1003-lab-03.tar.gz
+Desktop			Things			on...
+Documents		copy_to_backup.sh	pymel.log
+Downloads		drills.py		stuff
+Library			foo			testing.txt.save
+MPLABXProjects		food			xgen
+Movies			humvn
+ent-v314-005:~ student$ 
 
 
 ==========
@@ -50,6 +68,8 @@ What commands did you use to do this?
 What command did you use to find the permissions?
 ----------
 
+ent-v314-005:~ student$ ls -l copy_to_backup.sh 
+-rw-r--r--  1 student  staff  0 Sep 24 15:58 copy_to_backup.sh
 
 
 ==========
@@ -58,7 +78,9 @@ What command did you use to find the permissions?
 What commands did you use to do this?  What was the output?
 ----------
 
-
+ent-v314-005:~ student$ chmod u+x copy_to_backup.sh 
+ent-v314-005:~ student$ ls -l copy_to_backup.sh 
+-rwxr--r--  1 student  staff  0 Sep 24 15:58 copy_to_backup.sh
 
 ==========
 7. Try executing the file!
@@ -76,6 +98,8 @@ What command did you use to try to execute the file?  What happens?
 What command did you use to do this?
 ----------
 
+nano copy_to_backup.sh
+
 
 
 ==========
@@ -87,22 +111,75 @@ c. print out "I'm done backing up"
 
 Write out the code in your file below...
 ----------
+#nano edit
 
+touch backup
+cp *.txt backup
+echo "I'm done backing up."
+
+
+//Output
+
+ent-v314-005:~ student$ touch newfile.txt
+ent-v314-005:~ student$ nano copy_to_backup.sh 
+ent-v314-005:~ student$ ./copy_to_backup.sh 
+I'm done backing up.
+ent-v314-005:~ student$ ls
+Adlm			New Unity Project	isus
+Adobe			Pictures		ls
+Applications		Public			mtec1003-lab-03
+BALANS.png.gz		QLData			mtec1003-lab-03.tar.gz
+BALANS.tar		Things			newfile.txt
+Desktop			backup			on...
+Documents		copy_to_backup.sh	pymel.log
+Downloads		drills.py		stuff
+Library			foo			testing.txt.save
+MPLABXProjects		food			xgen
+Movies			humvn
+Music			ipe.properties
+ent-v314-005:~ student$ cd bac
+-bash: cd: bac: No such file or directory
+ent-v314-005:~ student$ cd backup/
+ent-v314-005:backup student$ ls
+newfile.txt
+ent-v314-005:backup student$ 
 
 
 ==========
 10. Create a directory in your home called test
 ----------
+
+ent-v314-005:~ student$ mkdir test
+ent-v314-005:~ student$ ls
+Adlm			New Unity Project	isus
+Adobe			Pictures		ls
+Applications		Public			mtec1003-lab-03
+BALANS.png.gz		QLData			mtec1003-lab-03.tar.gz
+BALANS.tar		Things			newfile.txt
+Desktop			backup			on...
+Documents		copy_to_backup.sh	pymel.log
+Downloads		drills.py		stuff
+Library			foo			test
+MPLABXProjects		food			testing.txt.save
+Movies			humvn			xgen
+Music			ipe.properties
+ent-v314-005:~ student$ 
+
+
 ==========
 11. Go into that directory and create two empty files... 1.txt and 2.txt
 
 What commands did you use to do this?
 ----------
-
+ent-v314-005:~ student$ cd test
+ent-v314-005:test student$ touch 1.txt 2.txt
+ent-v314-005:test student$ ls
+1.txt	2.txt
+ent-v314-005:test student$ 
 
 
 ==========
-12. Move the script that you created into this directory.
+12. Move the script that you created itno this directory.
 
 What commands did you use to do this?
 ----------
